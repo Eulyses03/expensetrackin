@@ -10,14 +10,14 @@ import CustomInput from '../../src_2/components/customInput/CustomInput';
 import CustomButton from '../../src_3/custombutton/CustomButton';
 import CustomButton_2 from '../../src_3/custombutton/custombutton_2/CustomButton_2';
 
+
 const Signupscreen = () => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const onSigninPressed = () => {
-    console.warn('Sign in');
-  };
-  const onForgotPasswordPressed = () => {
-    console.warn('Forgot Password');
+  const [passwordRepeat, setPasswordRepeat] = useState('');
+  const onRegisterPressed = () => {
+    console.warn('Registered');
   };
   const onFacebookPressed = () => {
     console.warn('Facebook');
@@ -25,8 +25,8 @@ const Signupscreen = () => {
   const onGooglePressed = () => {
     console.warn('Google');
   };
-  const onCreatePressed = () => {
-    console.warn('Ok create');
+  const onSigninPressed = () => {
+    console.warn('Signing');
   };
 
   const {height} = useWindowDimensions();
@@ -40,18 +40,28 @@ const Signupscreen = () => {
           value={username}
           setValue={setUsername}
         />
+        <CustomInput placeholder="Email" value={email} setValue={setEmail} />
+
         <CustomInput
           placeholder="Password"
           value={password}
           setValue={setPassword}
           secureTextEntry={true}
         />
-
-        <CustomButton text="Sign in" onPress={onSigninPressed} />
-        <CustomButton_2
-          text="Forgot Password"
-          onPress={onForgotPasswordPressed}
+        <CustomInput
+          placeholder="Reapeat Password"
+          value={passwordRepeat}
+          setValue={setPasswordRepeat}
         />
+
+        <CustomButton text="Register" onPress={onRegisterPressed} />
+
+        <Text style={styles.Text}>
+          By registering, you accept our{' '}
+          <Text style={styles.link}> Terms of use</Text> and{' '}
+          <Text style={styles.link}> Privacy Policy</Text>
+        </Text>
+
         <CustomButton
           text="Sign in with Facebook"
           onPress={onFacebookPressed}
@@ -64,9 +74,10 @@ const Signupscreen = () => {
           bgColor="#FAE9EA"
           fgColor="#DD4D44"
         />
+
         <CustomButton_2
-          text="Don't have an account? Create one"
-          onPress={onCreatePressed}
+          text="Have an account? Sign in"
+          onPress={onSigninPressed}
         />
       </View>
     </ScrollView>
@@ -76,12 +87,21 @@ const Signupscreen = () => {
 const styles = StyleSheet.create({
   root: {
     alignItems: 'center',
+   padding: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     color: '#051c60',
     margin: 10,
+  },
+  Text:{
+    color: 'gray',
+    padding: 5,
+    marginVertical: 10,
+    },
+  link: {
+    color: '#fdb075',
   },
 });
 
