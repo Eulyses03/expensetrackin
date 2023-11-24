@@ -3,11 +3,12 @@ import React from 'react';
 import Signinscreen from './src/screens/Signinscreen';
 import Signupscreen from './src_4/Signupscreen';
 import ConfirmEmail from './src_5/confrimAccount/ConfirmEmail';
+import ResetPassword from './src_6/ResetPassword/ResetPassword';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-      <ConfirmEmail>ok </ConfirmEmail>
+      <ResetPassword>ok </ResetPassword>
     </SafeAreaView>
   );
 };

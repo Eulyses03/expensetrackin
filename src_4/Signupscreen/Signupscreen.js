@@ -28,6 +28,12 @@ const Signupscreen = () => {
   const onSigninPressed = () => {
     console.warn('Signing');
   };
+  const onTermsPressed = () => {
+    console.warn('Terms of Use');
+  };
+  const onPrivacyPressed = () => {
+    console.warn('Privacy Policy');
+  };
 
   const {height} = useWindowDimensions();
   return (
@@ -58,8 +64,8 @@ const Signupscreen = () => {
 
         <Text style={styles.Text}>
           By registering, you accept our{' '}
-          <Text style={styles.link}> Terms of use</Text> and{' '}
-          <Text style={styles.link}> Privacy Policy</Text>
+          <Text style={styles.link} onPress={onTermsPressed}> Terms of Use</Text> and{' '}
+          <Text style={styles.link} onPress={onPrivacyPressed}> Privacy Policy</Text>
         </Text>
 
         <CustomButton

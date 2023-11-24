@@ -12,11 +12,11 @@ import CustomButton_2 from '../../src_3/custombutton/custombutton_2/CustomButton
 import CustomButton_3 from '../../src_3/colorbutton/CustomButton_3';
 
 
-const ConfirmEmail = () => {
-  const [code, setCode] = useState('');
+const ResetPassword = () => {
+  const [username, setUsername] = useState('');
 
-  const onConfirmPressed = () => {
-    console.warn('Confirmed');
+  const onSendPressed = () => {
+    console.warn('Sending');
   };
   const onResentPressed = () => {
     console.warn('Resending Code');
@@ -32,18 +32,16 @@ const ConfirmEmail = () => {
   return (
     <ScrollView >
       <View style={styles.root}>
-        <Text style={styles.title}>Confirm your Email</Text>
+        <Text style={styles.title}>Reset your password</Text>
 
         
         <CustomInput 
-          placeholder="Enter Confirmation Code"
-          value={code}
-          setValue={setCode}
+          placeholder="Username"
+          value={username}
+          setValue={setUsername}
         />
 
-        <CustomButton text="Confirm" onPress={onConfirmPressed} />
-
-        <CustomButton_3 text="Resent code" onPress={onResentPressed} />
+        <CustomButton text="Send" onPress={onSendPressed} />
 
         <CustomButton_2 text="Back to Sign in" onPress={onBackPressed} />
       </View>
@@ -72,4 +70,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ConfirmEmail;
+export default ResetPassword;
