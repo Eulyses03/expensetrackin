@@ -4,11 +4,12 @@ import Signinscreen from './src/screens/Signinscreen';
 import Signupscreen from './src_4/Signupscreen';
 import ConfirmEmail from './src_5/confrimAccount/ConfirmEmail';
 import ResetPassword from './src_6/ResetPassword/ResetPassword';
+import WelcomePage from './src_7/welcomepage/WelcomePage';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-      <ResetPassword>ok </ResetPassword>
+      <WelcomePage>ok</WelcomePage>
     </SafeAreaView>
   );
 };
