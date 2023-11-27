@@ -9,6 +9,7 @@ import {
 import CustomInput from '../../src_2/components/customInput/CustomInput';
 import CustomButton from '../../src_3/custombutton/CustomButton';
 import CustomButton_2 from '../../src_3/custombutton/custombutton_2/CustomButton_2';
+import { useNavigation } from '@react-navigation/native';
 
 
 const Signupscreen = () => {
@@ -18,15 +19,23 @@ const Signupscreen = () => {
   const [passwordRepeat, setPasswordRepeat] = useState('');
   const onRegisterPressed = () => {
     console.warn('Registered');
+
+    navigation.navigate('Sign in');
   };
   const onFacebookPressed = () => {
     console.warn('Facebook');
+
+    navigation.navigate('Welcome Page');
   };
   const onGooglePressed = () => {
     console.warn('Google');
+
+    navigation.navigate('Welcome Page');
   };
   const onSigninPressed = () => {
     console.warn('Signing');
+
+    navigation.navigate('Sign in');
   };
   const onTermsPressed = () => {
     console.warn('Terms of Use');
@@ -36,6 +45,7 @@ const Signupscreen = () => {
   };
 
   const {height} = useWindowDimensions();
+  const navigation = useNavigation();
   return (
     <ScrollView>
       <View style={styles.root}>

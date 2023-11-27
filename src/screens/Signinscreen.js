@@ -11,27 +11,42 @@ import Logo from '../screens/assets/images/Logo_1.png';
 import CustomInput from '../../src_2/components/customInput/CustomInput';
 import CustomButton from '../../src_3/custombutton/CustomButton';
 import CustomButton_2 from '../../src_3/custombutton/custombutton_2/CustomButton_2';
+import {useNavigation} from '@react-navigation/native';
 
 const Signinscreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const onSigninPressed = () => {
     console.warn('Sign in');
+    //validate
+
+    navigation.navigate('Welcome Page');
+
   };
   const onForgotPasswordPressed = () => {
     console.warn('Forgot Password');
+
+    navigation.navigate('Reset Password');
   };
   const onFacebookPressed = () => {
     console.warn('Facebook');
+
+    navigation.navigate('Welcome Page');
   };
   const onGooglePressed = () => {
     console.warn('Google');
+
+    navigation.navigate('Welcome Page');
   };
   const onCreatePressed = () => {
     console.warn('Ok create');
+
+    navigation.navigate('Sign up');
   };
 
   const {height} = useWindowDimensions();
+  const navigation = useNavigation();
+
   return (
     <ScrollView>
       <View style={styles.root}>

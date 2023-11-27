@@ -10,6 +10,7 @@ import CustomInput from '../../src_2/components/customInput/CustomInput';
 import CustomButton from '../../src_3/custombutton/CustomButton';
 import CustomButton_2 from '../../src_3/custombutton/custombutton_2/CustomButton_2';
 import CustomButton_3 from '../../src_3/colorbutton/CustomButton_3';
+import { useNavigation } from '@react-navigation/native';
 
 
 const ResetPassword = () => {
@@ -19,18 +20,23 @@ const ResetPassword = () => {
 
   const onSubmitPressed = () => {
     console.warn('Sending');
+
+    navigation.navigate('Confirm Email');
   };
   const onResentPressed = () => {
     console.warn('Resending Code');
   };
   const onBackPressed = (Signinscreen) => {
     console.warn('Back to sign in page');
+
+    navigation.navigate('Sign in');
   };
   const onSigninPressed = () => {
     console.warn('Signing');
   };
 
   const {height} = useWindowDimensions();
+  const navigation = useNavigation();
   return (
     <ScrollView >
       <View style={styles.root}>
