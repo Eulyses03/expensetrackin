@@ -1,15 +1,27 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image, useWindowDimensions} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  useWindowDimensions,
+} from 'react-native';
 import Logo from './Logo/Logo_1.png';
-
+import {useNavigation} from '@react-navigation/native';
 const HomeMain = () => {
+  const {height} = useWindowDimensions();
 
-  const { height } = useWindowDimensions();
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome</Text>
       <Text style={styles.title}>To</Text>
-      <Image source={Logo} style={[StyleSheet.logo, { height: height * 0.3 }]} resizeMode="contain" />
+      <Image
+        source={Logo}
+        style={[StyleSheet.logo, {height: height * 0.3}]}
+        resizeMode="contain"
+      />
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity
@@ -32,13 +44,13 @@ const HomeMain = () => {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('LiquidateExpenseScreen')}>
+          onPress={() => navigation.navigate('Liquidate Screen')}>
           <Text style={styles.buttonText}>Liquidate Expense</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('ViewLiquidationScreen')}>
+          onPress={() => navigation.navigate('View Liquidation')}>
           <Text style={styles.buttonText}>View Liquidation</Text>
         </TouchableOpacity>
       </View>
