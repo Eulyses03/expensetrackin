@@ -13,7 +13,7 @@ import CustomButton_2 from '../../src_3/custombutton/custombutton_2/CustomButton
 import CustomButton_3 from '../../src_3/colorbutton/CustomButton_3';
 import CustomButton_4 from './CustomButton_4/CustomButton_4';
 import Logo from './CustomButton_4/Logo_1.png';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const WelcomePage = () => {
   const [code, setCode] = useState('');
@@ -23,8 +23,7 @@ const WelcomePage = () => {
   const onGetPressed = () => {
     console.warn('Proceeding...');
 
-    navigation.navigate ('Home Page');
-
+    navigation.navigate('Home Page');
   };
   const onResentPressed = () => {
     console.warn('Resending Code');
@@ -39,17 +38,19 @@ const WelcomePage = () => {
   const {height} = useWindowDimensions();
   const navigation = useNavigation();
   return (
-    <View style={styles.root}>
-      <Text style={styles.title}>Welcome</Text>
-      <Text style={styles.title}>To</Text>
-      <Image
-        source={Logo}
-        style={[StyleSheet.logo, {height: height * 0.3}]}
-        resizeMode="contain"
-      />
+    <ScrollView>
+      <View style={styles.root}>
+        <Text style={styles.title}>Welcome</Text>
+        <Text style={styles.title}>To</Text>
+        <Image
+          source={Logo}
+          style={[StyleSheet.logo, {height: height * 0.3}]}
+          resizeMode="contain"
+        />
 
-      <CustomButton_4 text="Get Started" onPress={onGetPressed} />
-    </View>
+        <CustomButton_4 text="Get Started" onPress={onGetPressed} />
+      </View>
+    </ScrollView>
   );
 };
 
