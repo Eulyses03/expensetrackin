@@ -1,1 +1,1 @@
-export { default } from './ViewLiquidation';
+export { default } from './BottomPage';

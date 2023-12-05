@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   input: {},
+  
 });
 
 export default CustomInput;

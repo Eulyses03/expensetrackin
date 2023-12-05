@@ -9,8 +9,7 @@ import {
 import CustomInput from '../../src_2/components/customInput/CustomInput';
 import CustomButton from '../../src_3/custombutton/CustomButton';
 import CustomButton_2 from '../../src_3/custombutton/custombutton_2/CustomButton_2';
-import { useNavigation } from '@react-navigation/native';
-
+import {useNavigation} from '@react-navigation/native';
 
 const Signupscreen = () => {
   const [username, setUsername] = useState('');
@@ -74,8 +73,15 @@ const Signupscreen = () => {
 
         <Text style={styles.Text}>
           By registering, you accept our{' '}
-          <Text style={styles.link} onPress={onTermsPressed}> Terms of Use</Text> and{' '}
-          <Text style={styles.link} onPress={onPrivacyPressed}> Privacy Policy</Text>
+          <Text style={styles.link} onPress={onTermsPressed}>
+            {' '}
+            Terms of Use
+          </Text>{' '}
+          and{' '}
+          <Text style={styles.link} onPress={onPrivacyPressed}>
+            {' '}
+            Privacy Policy
+          </Text>
         </Text>
 
         <CustomButton
@@ -103,7 +109,7 @@ const Signupscreen = () => {
 const styles = StyleSheet.create({
   root: {
     alignItems: 'center',
-   padding: 20,
+    padding: 5,
   },
   title: {
     fontSize: 24,
@@ -111,11 +117,11 @@ const styles = StyleSheet.create({
     color: '#051c60',
     margin: 10,
   },
-  Text:{
+  Text: {
     color: 'gray',
     padding: 5,
     marginVertical: 10,
-    },
+  },
   link: {
     color: '#fdb075',
   },

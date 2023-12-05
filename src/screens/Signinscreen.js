@@ -20,7 +20,9 @@ const Signinscreen = () => {
     console.warn('Sign in');
     //validate
 
-    navigation.navigate('Welcome Page');
+    navigation.push('MainContainer', { screen: 'MainContainer' });
+
+
 
   };
   const onForgotPasswordPressed = () => {

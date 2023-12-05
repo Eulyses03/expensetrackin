@@ -1,7 +1,7 @@
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import React from 'react';
-
-import Navigation from './Navigation';
+import Navigation from './Navigation/Navi';
+import MainContainer from './Navigation/MainContainer';
 
 const App = () => {
   return (
