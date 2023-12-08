@@ -6,10 +6,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-import HomeScreen from './src/Screens/HomeScreen';
-import AccountScreen from './src/Screens/AccountScreen';
-import AddExpense from './src/Screens/AddExpense';
-import ViewExpense from './src/Screens/ViewExpense';
+import HomeScreen from './src/Components/Screens/HomeScreen';
+import AccountScreen from './src/Components/Screens/AccountScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -22,10 +20,8 @@ const ExpenseDetailsScreen = () => { /* ... */ };
 
 // Nested Stack Navigator for Home tab
 const HomeStack = () => (
-  <Stack.Navigator screenOptions={{headerShown: false}}>
-    <Stack.Screen name="HomeScreen" component={HomeScreen} />
-    <Stack.Screen name="AddExpense" component={AddExpense} />
-    <Stack.Screen name="ViewExpense" component={ViewExpense} />
+  <Stack.Navigator>
+    <Stack.Screen name="Home" component={HomeScreen} />
   </Stack.Navigator>
 );
 
