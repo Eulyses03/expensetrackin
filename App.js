@@ -6,14 +6,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-import HomeScreen from './src/Components/Screens/HomeScreen';
-import AccountScreen from './src/Components/Screens/AccountScreen';
-import AddExpense from './src/Components/Screens/AddExpense';
-import ViewExpense from './src/Components/Screens/ViewExpense';
-import EditBudget from './src/Components/Screens/EditBudget';
-import LiquidateExpense from './src/Components/Screens/LiquidateExpense';
-import ViewLiquidation from './src/Components/Screens/ViewLiquidation';
-import AddBudget from './src/Components/Screens/AddBudget';
+import HomeScreen from './src/Screens/HomeScreen';
+import AccountScreen from './src/Screens/AccountScreen';
+import AddExpense from './src/Screens/AddExpense';
+import ViewExpense from './src/Screens/ViewExpense';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -21,25 +17,21 @@ const Stack = createStackNavigator();
 // Define screens
 
 const AccountS = () => { /* ... */ };
-const Home = () => { /* ... */ };
+const HomeFeedScreen = () => { /* ... */ };
 const ExpenseDetailsScreen = () => { /* ... */ };
 
 // Nested Stack Navigator for Home tab
 const HomeStack = () => (
-  <Stack.Navigator >
-    <Stack.Screen name="Home" component={HomeScreen} />
-    <Stack.Screen name="Add Expense" component={AddExpense} />
-    <Stack.Screen name="View Expense" component={ViewExpense} />
-    <Stack.Screen name="View Liquidation" component={ViewLiquidation} />
-    <Stack.Screen name="Edit Budget" component={EditBudget} />
-    <Stack.Screen name="Liquidate Expense" component={LiquidateExpense} />
-    <Stack.Screen name="Add Budget" component={AddBudget} />
+  <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Screen name="HomeScreen" component={HomeScreen} />
+    <Stack.Screen name="AddExpense" component={AddExpense} />
+    <Stack.Screen name="ViewExpense" component={ViewExpense} />
   </Stack.Navigator>
 );
 
 function App() {
   return (
-    <NavigationContainer >
+    <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Home"
         screenOptions={{
@@ -74,5 +66,4 @@ function App() {
 }
 
 export default App;
-
 
