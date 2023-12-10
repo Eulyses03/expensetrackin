@@ -7,14 +7,13 @@ const EditBudget = ({ route, navigation }) => {
   const [editedBudget, setEditedBudget] = useState(budget);
 
   const handleUpdateBudget = () => {
-    // Validate input
     if (isNaN(editedBudget) || editedBudget <= 0) {
       alert('Please enter a valid budget amount.');
       return;
     }
 
-    // Update budget and navigate back with updated value
-    navigation.goBack({ updatedBudget: editedBudget });
+    const updatedBudget = { ...budget, budget: editedBudget };
+    navigation.goBack({ updatedBudget });
   };
 
   return (

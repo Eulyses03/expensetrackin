@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './src/Components/Screens/HomeScreen';
 import AccountScreen from './src/Components/Screens/AccountScreen';
+import EditBudget from './src/Components/Screens/EditBudget';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -22,6 +23,7 @@ const ExpenseDetailsScreen = () => { /* ... */ };
 const HomeStack = () => (
   <Stack.Navigator>
     <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Screen name="Edit Budget" component={EditBudget} />
   </Stack.Navigator>
 );
 
